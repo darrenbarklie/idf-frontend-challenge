@@ -65,26 +65,78 @@ body {
 }
 
 .imageSet {
+  position: relative;
   max-width: 1000px;
   max-width: 500px;
   margin: 2rem auto;
+  
 }
 .imageSet img {
-  border: 7px solid white;
+  position: absolute;
   max-width: 100%;
   height: auto;
-  box-shadow: 0px 2px 7px 4px rgba(170,170,170,1);
+  border: 7px solid white;
+  box-shadow: 0px 2px 7px 4px rgba(0,0,0,0.5);
 }
 
-/* Image 01 custom */
+
+
+/* --- Start positioning --- */
+
 .imageSet img:nth-child(1) {
-  filter: grayscale(100%) sepia(17.5%) contrast(80%) saturate(5);
+  z-index: 3;
+  margin-left: -1rem;
+  transform: rotate(-5deg);
+}
+.imageSet img:nth-child(2) {
+  z-index: 2;
+}
+.imageSet img:nth-child(3) {
+  z-index: 1;
+  margin-left: 1.5rem;
+  transform: rotate(5deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.imageSet img:nth-child(1) {
+  
+}
+.imageSet img:nth-child(2) {
+  
+}
+.imageSet img:nth-child(3) {
+  
+}
+
+
+
+
+
+
+
+/* --- Filter styles --- */
+
+/* Image 01 */
+.imageSet img:nth-child(1) {
+  filter: grayscale(100%) sepia(0%) contrast(80%) saturate(5);
 }
 .imageSet img:nth-child(1):hover {
   filter: none;
 }
 
-/* Image 02 custom */
+/* Image 02 */
 .imageSet img:nth-child(2) {
   filter: grayscale(100%);
 }
@@ -92,7 +144,7 @@ body {
   filter: grayscale(0);
 }
 
-/* Image 03 custom */
+/* Image 03 */
 .imageSet img:nth-child(3) {
   filter: blur(3px);
 }
