@@ -49,6 +49,55 @@ table {
 	border-spacing: 0;
 }
 
+/* --- Global-box sizing --- */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 /* ---  Custom CSS below --- */
+
+body {
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.imageSet {
+  max-width: 1000px;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+.imageSet img {
+  border: 7px solid white;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0px 2px 7px 4px rgba(170,170,170,1);
+}
+
+/* Image 01 custom */
+.imageSet img:nth-child(1) {
+  filter: grayscale(100%) sepia(17.5%) contrast(80%) saturate(5);
+}
+.imageSet img:nth-child(1):hover {
+  filter: none;
+}
+
+/* Image 02 custom */
+.imageSet img:nth-child(2) {
+  filter: grayscale(100%);
+}
+.imageSet img:nth-child(2):hover {
+  filter: grayscale(0);
+}
+
+/* Image 03 custom */
+.imageSet img:nth-child(3) {
+  filter: blur(3px);
+}
+.imageSet img:nth-child(3):hover {
+  filter: blur(0);
+}
+
 
