@@ -49,6 +49,10 @@ table {
 	border-spacing: 0;
 }
 
+
+/* --- Custom Styles --- */
+
+
 /* --- Global-box sizing --- */
 html {
   box-sizing: border-box;
@@ -57,19 +61,17 @@ html {
   box-sizing: inherit;
 }
 
-/* ---  Custom CSS below --- */
-
+/* ---  Object global styles --- */
 body {
   background-color: #fff;
   font-size: 16px;
+  padding: 2rem 4rem;
 }
-
 .imageSet {
   position: relative;
-  max-width: 1000px;
+  width: 100%;
   max-width: 500px;
   margin: 2rem auto;
-  
 }
 .imageSet img {
   position: absolute;
@@ -82,7 +84,7 @@ body {
 
 /* --- Filter styles --- */
 .imageSet img:nth-child(1) {
-  filter: grayscale(100%) sepia(0%) contrast(80%) saturate(5);
+  filter: grayscale(100%) sepia(12%) contrast(80%) saturate(5);
 }
 .imageSet img:nth-child(1):hover {
   filter: none;
@@ -98,6 +100,12 @@ body {
 }
 .imageSet img:nth-child(3):hover {
   filter: blur(0);
+  filter: brightness(1.01);
+    /* Chrome filter animation on hover issue:
+       https://bugs.chromium.org/p/chromium/issues/detail?id=796963&can=2&start=0&num=100&q=filter%20blur&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified&groupby=&sort=
+       Fix:
+       https://stackoverflow.com/questions/12980153/image-moves-on-hover-chrome-opacity-issue
+    */
 }
 
 
@@ -128,11 +136,11 @@ body {
 } 
 .imageSet:hover img:nth-child(2) {
   margin-top: 190px;  /* TODO : Magic number */
+  margin-top: 40%;
   transition: all 0.3s ease-out;
 }
 .imageSet:hover img:nth-child(3) {
-  margin: 410px 0 0;  /* TODO : Magic number */
+  margin: 84% 0 0;
   transform: rotate(0deg);
   transition: all 0.3s ease-out;
-  /* BUG : Render glitch on item hover in Chrome */
 }
