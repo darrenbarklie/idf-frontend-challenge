@@ -7,29 +7,26 @@
  *
  */
  
- const aside = document.querySelector('aside#widget-idf-ux');
- const url = 'https://test.information-architecture.org/widgets/ux-daily-v2?ep=mads_soegaard';
+const targetEl = document.querySelector('aside#widget-idf-ux');
+const url = 'https://test.information-architecture.org/widgets/ux-daily-v2?ep=mads_soegaard';
  
- //const url = 'https://randomuser.me/api/?results=10';
- 
- 
- fetch(url)
-   // Transform data into JSON (WORKS)
-   .then((resp) => resp.json())
- 
-    // Handle data
-   .then(function(data){
-    
-    
-    console.log(data)
-   })
-   // Handle error
-   .catch(function(error){
-     
-   });
+//const url = 'https://randomuser.me/api/?results=10';
  
  
- 
+fetch(url)
+  // Transform data into JSON (WORKS)
+  .then((resp) => resp.json())
 
- console.log('End JS');
+  // Handle data
+  .then(function(data){
+    // Send data to HTML   
+    targetEl.innerHTML = data.body;
+  })
+
+  // Handle error
+  .catch(function(error){
+    console.log('Something went wrong, could not fetch from ' + url);
+    console.log(error);
+  });
+
  
