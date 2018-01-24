@@ -80,9 +80,28 @@ body {
 }
 
 
+/* --- Filter styles --- */
+.imageSet img:nth-child(1) {
+  filter: grayscale(100%) sepia(0%) contrast(80%) saturate(5);
+}
+.imageSet img:nth-child(1):hover {
+  filter: none;
+}
+.imageSet img:nth-child(2) {
+  filter: grayscale(100%);
+}
+.imageSet img:nth-child(2):hover {
+  filter: grayscale(0);
+}
+.imageSet img:nth-child(3) {
+  filter: blur(3px);
+}
+.imageSet img:nth-child(3):hover {
+  filter: blur(0);
+}
+
 
 /* --- Start positioning --- */
-
 .imageSet img:nth-child(1) {
   z-index: 3;
   margin-left: -1rem;
@@ -98,58 +117,67 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-.imageSet img:nth-child(1) {
-  
-}
-.imageSet img:nth-child(2) {
-  
-}
-.imageSet img:nth-child(3) {
-  
-}
-
-
-
-
-
-
-
-/* --- Filter styles --- */
-
-/* Image 01 */
-.imageSet img:nth-child(1) {
-  filter: grayscale(100%) sepia(0%) contrast(80%) saturate(5);
-}
+/* --- Hover positioning --- *
 .imageSet img:nth-child(1):hover {
-  filter: none;
+  margin: 0;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out;
+}
+.imageSet img:nth-child(1):hover ~ img:nth-child(2) {
+  margin-top: 200px;  /* TODO : Magic number *
+  transition: all 0.2s ease-out;
+}
+.imageSet img:nth-child(1):hover ~ img:nth-child(3) {
+  margin: 430px 0 0; /* TODO : Magic number *
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out;
 }
 
-/* Image 02 */
-.imageSet img:nth-child(2) {
-  filter: grayscale(100%);
+*/
+
+
+
+
+
+/* TODO : Continue*/
+.imageSet:hover {
+
+}
+.imageSet:hover img:nth-child(1) {
+  margin: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
+} 
+.imageSet:hover img:nth-child(2) {
+  margin-top: 190px;  /* TODO : Magic number */
+  transition: all 0.3s ease-out;
+}
+.imageSet:hover img:nth-child(3) {
+  /* BUG : Weird render glitch on item hover */
+  margin: 410px 0 0;  /* TODO : Magic number */
+  transform: rotate(0deg);
+  transition: all 0.3s ease-out;
+}
+
+
+
+
+
+
+
+
+/* BUG: Adjancent sibling prevents styling nth-child(1) */
+/* .imageSet img:nth-child(2):hover + img:nth-child(1) {
+  margin: 0;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out;
 }
 .imageSet img:nth-child(2):hover {
-  filter: grayscale(0);
+  margin-top: 200px;
+  transition: all 0.2s ease-out;
 }
-
-/* Image 03 */
-.imageSet img:nth-child(3) {
-  filter: blur(3px);
-}
-.imageSet img:nth-child(3):hover {
-  filter: blur(0);
-}
-
-
+.imageSet img:nth-child(2):hover ~ img:nth-child(3) {
+  margin: 430px 0 0;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-out;
+} */
