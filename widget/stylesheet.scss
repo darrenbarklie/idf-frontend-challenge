@@ -1,0 +1,120 @@
+// sass --watch widget/stylesheet.scss:widget/stylesheet.css
+
+$brand-blue:  #009cde;
+$black:       #404040;
+
+
+#widget-idf-ux {
+  padding-right: 0;
+}
+.idf-ux-daily-widget {
+  
+  .idf-ux-daily-widget__logo {
+    margin-top: 0.25rem;
+  }
+  .idf-ux-daily-widget__header {
+    display: inline-block;
+    padding: 0 0 0.15rem 0;
+    margin-bottom: -3px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border-bottom: 4px solid $brand-blue; 
+  }
+  
+  .idf-ux-daily-widget__articles {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    .idf-article {
+      padding: 1rem 0.5rem 1rem 0.75rem;
+      border-top: 2px solid #e3e3e3;
+      &:last-child {
+        border-bottom: 2px solid #e3e3e3;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-decoration: none;
+        .idf-article__fulltext {
+          .idf-article__title {
+            color: #4a4a4a;
+            transition: color 0.44s ease-out;
+            .idf-article__published-time {
+              font-family: 'Roboto Condensed', sans-serif;
+              font-size: 0.75rem;
+              color: #999;
+              margin: 0.75rem 0 0;
+              text-transform: uppercase;
+            }
+          }
+        }
+        &:after {
+          flex: 0 0 auto;
+          display: block;
+          content: '';
+          background-image: url(svg/cheveron-right.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          width: 1rem;
+          height: 1rem;
+          margin-left: 1rem;
+        }
+      }
+      transition: background-color 0.5s ease-out;
+      &:hover {
+        background: #eee;
+        transition: background-color 0.22s ease-in;
+        .idf-article__fulltext {
+          .idf-article__title {
+            color: $brand-blue;
+            transition: color 0.22s linear;
+          }
+        }
+        a:after {
+          animation: bounce 2s infinite;
+        }
+      }
+    }
+  }
+  
+  .idf-ux-daily-widget__text {
+    margin: 1rem 0;
+    line-height: 1.5;
+    a {
+      color: $brand-blue;
+      text-decoration: none;
+      transition: color 0.5s ease-out;
+      &:hover {
+        color: #0caef2;
+        transition: color 0.22s linear;
+      }
+    }
+  }
+}
+
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -ms-transform: translateX(0);
+        transform: translateX(0);
+  }
+  40% {
+    -ms-transform: translateX(-4px);
+        transform: translateX(-4px);
+  }
+  60% {
+    -ms-transform: translateX(-2px);
+        transform: translateX(-2px);
+  }
+}
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+          animation: bounce 2s infinite;
+}

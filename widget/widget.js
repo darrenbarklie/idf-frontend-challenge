@@ -14,12 +14,12 @@ const url = 'https://test.information-architecture.org/widgets/ux-daily-v2?ep=ma
  
  
 fetch(url)
-  // Transform data into JSON (WORKS)
+  // Transform data into JSON
   .then((resp) => resp.json())
 
   // Handle data
   .then(function(data){
-    // Send data to HTML   
+    // Present data HTML
     targetEl.innerHTML = data.body;
   })
 
