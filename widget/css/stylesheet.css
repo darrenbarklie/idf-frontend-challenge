@@ -2,11 +2,17 @@
   padding-right: 0; }
 
 .idf-ux-daily-widget .idf-ux-daily-widget__logo {
-  margin-top: 0.25rem; }
+  margin-top: 0.25rem;
+  text-align: center;
+  padding-right: 0.75rem; }
+  .idf-ux-daily-widget .idf-ux-daily-widget__logo img {
+    max-width: 100%;
+    height: auto; }
 .idf-ux-daily-widget .idf-ux-daily-widget__header {
   display: inline-block;
   padding: 0 0 0.15rem 0;
   margin-bottom: -3px;
+  margin-right: 0.75rem;
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   font-size: 1rem;
@@ -46,6 +52,9 @@
         width: 1rem;
         height: 1rem;
         margin-left: 1rem; }
+        @media only screen and (max-width: 550px) {
+          .idf-ux-daily-widget .idf-ux-daily-widget__articles .idf-article a:after {
+            display: none; } }
     .idf-ux-daily-widget .idf-ux-daily-widget__articles .idf-article:hover {
       background: #eee;
       transition: background-color 0.22s ease-in; }
@@ -55,6 +64,7 @@
       .idf-ux-daily-widget .idf-ux-daily-widget__articles .idf-article:hover a:after {
         animation: bounce 2s infinite; }
 .idf-ux-daily-widget .idf-ux-daily-widget__text {
+  padding-right: 0.75rem;
   margin: 1rem 0;
   line-height: 1.5; }
   .idf-ux-daily-widget .idf-ux-daily-widget__text a {
