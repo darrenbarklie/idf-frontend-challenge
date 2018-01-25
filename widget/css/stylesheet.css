@@ -39,7 +39,7 @@
         flex: 0 0 auto;
         display: block;
         content: '';
-        background-image: url(svg/cheveron-right.svg);
+        background-image: url(../svg/cheveron-right.svg);
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;

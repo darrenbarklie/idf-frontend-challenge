@@ -1,4 +1,4 @@
-// sass --watch widget/stylesheet.scss:widget/stylesheet.css
+// sass --watch widget/sass/stylesheet.scss:widget/css/stylesheet.css
 
 $brand-blue:  #009cde;
 $black:       #404040;
@@ -54,7 +54,7 @@ $black:       #404040;
           flex: 0 0 auto;
           display: block;
           content: '';
-          background-image: url(svg/cheveron-right.svg);
+          background-image: url(../svg/cheveron-right.svg);
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center;
